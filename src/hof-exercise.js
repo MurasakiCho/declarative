@@ -29,16 +29,20 @@ const calculateTotalImperative = (items, tax) => {
 /**********/
 
 // prices: (items: [{price: number}]) -> [number]
-const prices = undefined; // TODO - Implementation
+// TODO - Implementation
+const prices = items => items.map(items => items.price); 
 
 // sum: (numbers: [number]) -> number
-const sum = undefined; // TODO - Implementation
+// TODO - Implementation
+const sum = undefined; 
 
 // selectTaxable: (items: [{taxable: boolean}]) -> [{taxable: boolean}]
-const selectTaxable = undefined; // TODO - Implementation
+// TODO - Implementation
+const selectTaxable = undefined; 
 
 // applyTax: (prices: [number], tax: number) -> [number]
-const applyTax = undefined; // TODO - Implementation
+// TODO - Implementation
+const applyTax = undefined; 
 
 // baseSum: TODO - Type Signature
 const baseSum = items => sum(prices(items));
