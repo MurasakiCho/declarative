@@ -34,23 +34,23 @@ const prices = items => items.map(items => items.price);
 
 // sum: (numbers: [number]) -> number
 // TODO - Implementation
-const sum = undefined; 
+const sum = prices => prices.reduce((accumulator, currentValue) => {return accumulator + currentValue}, 0); 
 
 // selectTaxable: (items: [{taxable: boolean}]) -> [{taxable: boolean}]
 // TODO - Implementation
-const selectTaxable = undefined; 
+const selectTaxable = items => items.filter( items => items.taxable == true);
 
 // applyTax: (prices: [number], tax: number) -> [number]
 // TODO - Implementation
-const applyTax = undefined; 
+const applyTax = (prices, tax) => prices.map(prices => prices * tax); 
 
-// baseSum: TODO - Type Signature
+// baseSum: (items: [{price: number}]) -> number
 const baseSum = items => sum(prices(items));
 
-// taxSum: TODO - Type Signature
+// taxSum: (items: [{price: number}, {taxable: boolean}], tax: number) -> number
 const taxSum = (items, tax) => sum(applyTax(prices(selectTaxable(items)), tax));
 
-// calculateTotalDeclarative: TODO - Type Signature
+// calculateTotalDeclarative: (items: [{price: number}, {taxable: boolean}], tax: number) -> number
 const calculateTotalDeclarative = (items, tax) =>
   baseSum(items) + taxSum(items, Math.abs(tax));
 
